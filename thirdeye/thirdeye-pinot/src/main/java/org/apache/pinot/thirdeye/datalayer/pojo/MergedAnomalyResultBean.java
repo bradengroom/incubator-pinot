@@ -29,6 +29,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import org.apache.commons.lang3.ObjectUtils;
+import org.apache.pinot.thirdeye.constant.AnomalySeverity;
 
 
 public class MergedAnomalyResultBean extends AbstractBean implements Comparable<MergedAnomalyResultBean>, Serializable {
@@ -60,6 +61,7 @@ public class MergedAnomalyResultBean extends AbstractBean implements Comparable<
   private Set<Long> childIds; // ids of the anomalies this anomaly merged from
   private boolean isChild;
   private AnomalyType type;
+  private AnomalySeverity severity = AnomalySeverity.DEFAULT;
 
   public Set<Long> getChildIds() {
     return childIds;
@@ -262,6 +264,14 @@ public class MergedAnomalyResultBean extends AbstractBean implements Comparable<
 
   public void setType(AnomalyType type) {
     this.type = type;
+  }
+
+  public AnomalySeverity getSeverity() {
+    return severity;
+  }
+
+  public void setSeverity(AnomalySeverity severity) {
+    this.severity = severity;
   }
 
   @Override

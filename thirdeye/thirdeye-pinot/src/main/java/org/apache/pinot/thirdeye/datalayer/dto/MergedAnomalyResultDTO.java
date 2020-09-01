@@ -44,6 +44,8 @@ public class MergedAnomalyResultDTO extends MergedAnomalyResultBean implements A
 
   private Set<MergedAnomalyResultDTO> children = new HashSet<>();
 
+  private boolean renotify;
+
   public MergedAnomalyResultDTO() {
     setCreatedTime(System.currentTimeMillis());
   }
@@ -92,6 +94,14 @@ public class MergedAnomalyResultDTO extends MergedAnomalyResultBean implements A
   @Deprecated
   public AnomalyFunctionDTO getFunction() {
     return function;
+  }
+
+  public boolean shouldRenotify() {
+    return renotify;
+  }
+
+  public void setRenotify(boolean renotify) {
+    this.renotify = renotify;
   }
 
   @Deprecated
