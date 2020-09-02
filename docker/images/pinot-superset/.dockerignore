@@ -18,6 +18,4 @@
 #
 
 *
-!bin/
 !examples/
-!requirements-db.txt
